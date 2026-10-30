@@ -1,3 +1,6 @@
+
+"""Manage bike-share station records and rentals."""
+
 import secrets
 import sqlite3
 
