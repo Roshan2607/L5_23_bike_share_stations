@@ -1,32 +1,48 @@
 
-# Lab 5 - Static Code Analysis
-## Issues Identified and Fixed
+# Lab 5 - Static Code Analysis Reflection
 
-| Issue | Type | Original Line(s) | Description | Fix Approach |
-|---|---|---|---|---|
-| SQL Injection | Security | 9 | SQL query was constructed using string concatenation, allowing unsafe input to alter the query. | Replaced string concatenation with parameterized queries using placeholders. |
-| Insecure Random Number Generation | Security | 21 | random.randint() generated predictable unlock PINs. | Replaced random.randint() with secrets.randbelow(). |
-| Broad Exception Handling | Security/Quality | 30-33 | The program caught all exceptions and ignored them using pass. | Removed unnecessary exception handling so errors are not silently ignored. |
-| Mutable Default Argument | Bug | 8 | A shared list was used as a default parameter, causing unintended data persistence. | Replaced the default list with None and initialized it inside the function. |
-| Unused Variable | Code Quality | 26 | The variable summary was assigned but never used. | Removed the unused variable. |
-| Missing Return Value | Bug | 13-17 | rentBike() returned None when renting failed. | Added an explicit return False. |
-| Unsafe None Handling | Bug | 36-40 | The program accessed row[0] without verifying that a database result existed. | Added checks for None before accessing results. |
-| Naming Convention | Style | Multiple | Function names were written in camelCase instead of snake_case. | Renamed functions to follow PEP 8 naming conventions. |
-| Line Length | Style | Multiple | Several lines exceeded the recommended length. | Split long statements into multiple lines. |
-| Missing Documentation | Quality | Multiple | Functions and the module lacked docstrings. | Added descriptive module and function docstrings. |
+## 1. What did you learn from static code analysis?
 
-## Tools Used
+I learned that static code analysis helps identify bugs,
+security vulnerabilities, and formatting issues without
+executing the program.
 
-- Pylint: Analyzed Python code quality and potential bugs.
-- Bandit: Identified common security vulnerabilities.
-- Flake8: Checked formatting and PEP 8 compliance.
+Tools such as Pylint, Bandit, and Flake8 help improve
+code quality, readability, security, and maintainability.
 
-## Conclusion
+## 2. Which issues were identified, and which were most important?
 
-The identified issues were addressed by improving SQL query
-security, random number generation, exception handling,
-return values, database result validation, naming conventions,
-and formatting.
+The analysis identified issues such as SQL injection,
+insecure random number generation, mutable default
+arguments, unused variables, and inconsistent formatting.
 
-The final program preserves the original functionality while
-improving security, readability, and maintainability.
+The SQL injection vulnerability was especially important
+because constructing SQL queries using string
+concatenation can allow unsafe input to change the
+meaning of a database query.
+
+## 3. How did the tools help improve the program?
+
+Pylint helped identify code quality issues such as
+mutable default arguments and unused variables.
+
+Bandit helped identify security issues such as insecure
+random number generation and unsafe SQL construction.
+
+Flake8 helped improve the code's readability by
+identifying formatting and PEP 8 style violations.
+
+These tools helped make the program easier to understand,
+maintain, and debug.
+
+## 4. What are the limitations of static analysis?
+
+Static analysis cannot guarantee that a program works
+correctly under every condition.
+
+It may also report false positives and cannot detect
+every logical error.
+
+Therefore, static analysis should be combined with
+program execution, testing, and code review to ensure
+reliable software.
