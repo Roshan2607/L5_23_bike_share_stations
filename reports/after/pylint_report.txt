@@ -1,6 +1,4 @@
-************* Module bike_share_stations
-bike_share_stations.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 
-------------------------------------------------------------------
-Your code has been rated at 9.71/10 (previous run: 3.89/10, +5.82)
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.71/10, +0.29)
 
